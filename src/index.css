@@ -1,13 +1,219 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  margin-top: 45px;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+@media (max-width: 768px) {
+  .navbar {
+    margin-top: 0;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar svg {
+    width: 145px;
+  }
+}
+.navbar .menu {
+  display: flex;
+  gap: 60px;
+}
+@media (max-width: 768px) {
+  .navbar .menu {
+    gap: 26px;
+  }
+}
+.navbar .menu a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .navbar .menu a {
+    font-size: 12px;
+  }
+}
+.navbar .menu a.active {
+  text-decoration: underline;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding: 66px 0 30px 0;
+  background-color: #000000;
+}
+.footer span {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 24px;
+}
+@media (max-width: 768px) {
+  .footer span {
+    font-size: 12px;
+  }
+}
+
+/**************Home*********************/
+.container-home {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+}
+@media (max-width: 768px) {
+  .container-home {
+    padding: 0 20px 20px 20px;
+    gap: 22px;
+  }
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+@media (max-width: 768px) {
+  .banner-container {
+    height: 111px;
+  }
+}
+.banner-container .banner-cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+}
+.banner-container .banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 48px;
+  color: #FFFFFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
+  z-index: 2;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .banner-container .banner-title {
+    font-size: 24px;
+    width: 80%;
+    text-align: left;
+  }
+}
+
+.card {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 42%, rgba(4, 4, 4, 0.205) 99.99%, rgba(0, 0, 0, 0.5) 100%);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 340px;
+  list-style: none;
+}
+.card .card-cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.card .card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #FFFFFF;
+}
+
+.card-container {
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 50px;
+}
+@media (max-width: 768px) {
+  .card-container {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+.card-container .card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .card-container .card-list {
+    gap: 20px;
+  }
+}
+
+/**************404*********************/
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 139px;
+  padding: 139px 0;
+}
+.error h1 {
+  font-size: 288px;
+  font-weight: 700;
+  color: #FF6060;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .error h1 {
+    font-size: 96px;
+  }
+}
+.error p {
+  font-size: 36px;
+  font-weight: 500;
+  color: #FF6060;
+}
+@media (max-width: 768px) {
+  .error p {
+    font-size: 18px;
+  }
+}
+.error a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .error a {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=index.css.map */

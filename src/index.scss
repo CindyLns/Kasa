@@ -1,0 +1,499 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+$primary-color: #FF6060; 
+$grey: #E3E3E3;
+$light-grey: #F6F6F6;
+$black: #000000;
+$white: #FFFFFF;
+$gradient: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(10, 10, 10, 0) 42%,
+  rgba(4, 4, 4, 0.205) 99.99%,
+  rgba(0, 0, 0, 0.5) 100%
+);
+$box-shadow: 0px 4px 4px 0px #00000040;
+
+.navbar {
+  margin-top: 45px;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding: 20px;
+  }
+  svg {
+    @media (max-width: 768px) {
+      width: 145px;
+    }
+  }
+  .menu {
+    display: flex;
+    gap: 60px;
+      @media (max-width: 768px) {
+        gap: 26px;
+      }
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 24px;
+      color: $black;
+     @media (max-width: 768px) {
+        font-size: 12px;
+      }
+
+       &.active{
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  padding: 66px 0 30px 0;
+  background-color: $black;
+
+  span {
+    color: $white;
+    font-weight: 500;
+    font-size: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
+@mixin subtitle {
+  font-size: 36px;
+  font-weight: 500;
+  color: $primary-color;
+
+     @media (max-width: 768px) {
+     font-size: 18px;
+    }
+
+}
+/**************Home*********************/
+.container-home {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+
+    @media (max-width: 768px) {
+      padding: 0 20px 20px 20px;
+      gap: 22px;
+    }
+}
+
+@mixin banner {
+  position: relative;
+  width: 100%;
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+    
+    @media (max-width: 768px) {
+      height: 111px;
+
+    }
+
+  .banner-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+  .banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 48px;
+    color: $white;
+    text-shadow: 0px 4px 4px #00000040;
+    z-index: 2;
+    text-align: center;
+  
+    @media (max-width: 768px) {
+      font-size: 24px;
+      width: 80%;
+      text-align: left;
+
+    }
+
+  }
+}
+.banner-container {
+   @include banner;
+}
+
+@mixin card {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden; 
+  position: relative;
+
+  .card-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+  }
+  
+  .card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: $gradient;
+  }
+
+  .card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: $white;
+    z-index: 2;
+  }
+}
+
+.card {
+  @include card;
+  width: 100%;
+  height: 340px;
+  list-style: none;
+}
+.card-container {
+  background-color: $light-grey;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 50px;
+
+    @media (max-width: 768px) {
+      padding: 0;
+      background-color: transparent;
+    }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+    }
+  }
+
+}
+
+/**************About*********************/
+.collapse-container{
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: 1023px) {
+    padding: 0;
+  }
+}
+
+.collapse {
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 10px 20px 10px 15px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+
+  .collapse-title {
+    color: $white;
+    font-size: 24px;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+     font-size: 13px;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+    @media (max-width: 768px) {
+      width: 1rem;
+    }
+  }
+}
+.collapse-content {
+  padding: 10px 20px 10px 15px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li{
+    list-style: none;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 12px;
+    }
+
+  }
+}
+
+/**************404*********************/
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 139px;
+  padding: 139px 0;
+
+  @media (max-width: 768px) {
+    gap: 113px;
+    padding: 113px 0;
+  }
+
+  h1 {
+    font-size: 288px;
+    font-weight: 700;
+    color: $primary-color;
+    margin: 0;
+
+    @media (max-width: 768px) {
+     font-size: 96px;
+    }
+  }
+  p{
+    @include subtitle
+  }
+  a{
+    font-size: 18px;
+    font-weight: 500;
+    color: $black;
+
+    @media (max-width: 768px) {
+     font-size: 14px;
+    }
+  }
+
+}
+/**************Fiche Logement*********************/
+.slide-container {
+    padding: 50px 100px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px 20px 20px;
+  }
+
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    height: 255px;
+    margin-bottom: 15px;
+  }
+
+  .prev {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    svg{
+      @media (max-width: 1023px) {
+        width: 11px;
+        height: 20px;
+      }
+    }
+  }
+  .slide-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slide-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $white;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .next {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    svg{
+      @media (max-width: 1023px) {
+        width: 11px;
+        height: 20px;
+      }
+    }
+  }
+
+}
+
+.slide-row {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  .slide-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+  .slide-col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    @media (max-width: 768px) {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+}
+.slide-name {
+   @include subtitle;
+   margin: 0;
+}
+.slide-location {
+  font-size: 18px;
+  font-weight: 500;
+  color: $black;
+  margin: 5px 0;
+    @media (max-width: 768px) {
+     font-size: 14px;
+    }
+}
+.slide-host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p{
+    font-size: 18px;
+    font-weight: 500;
+    color: $primary-color;
+    width: 93px;
+    text-align: right;
+    margin: 0;
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+  .picture-host {
+    width: 64px;
+    height: 64px;
+    border-radius: 99%;
+  }
+}
+
+.slide-tag {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+  
+  li{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 4px 20px;
+    
+  @media (max-width: 1023px) {
+    font-size: 10px;
+  }
+  }
+}
+.slide-rating {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  svg{
+     @media (max-width: 1023px) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+.slide-collapse {
+  margin-top: 20px;
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.slide-collapse > * {
+  flex: 1;
+}
